@@ -9,21 +9,20 @@ body{
     display: flex;
     flex-direction: row;
     display: inline-block;
-    
-    width: 210px;
-    background: rgb(141, 135, 135);
-    padding: 15px;
+    width: 250px;
+    background: #fffde7;
+    padding: 20px;
 }
 .tittle{
     margin: auto;
     text-align: center;
-    font-size: 16px;
-    
+    font-size: 19px;
     margin-bottom: 20px;
     margin-top: 20px;
     color: blue;
 }
 .price{
+    color: #fa3808;
     margin: auto;
     text-align: center;
     font-size: 60px;
@@ -31,6 +30,7 @@ body{
     margin-bottom: 20px;
 }
 .description{
+    color: rgb(41, 41, 41);
     margin: auto;
     text-align: center;
     font-size: 16px;
