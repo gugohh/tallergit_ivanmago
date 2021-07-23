@@ -2,11 +2,15 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+body{
+    background-color: aquamarine;
+}
 .container{
+    display: flex;
+    flex-direction: row;
     display: inline-block;
     width: 250px;
-    background: #eee;
+    background: rgb(141, 135, 135);
     padding: 20px;
 }
 .tittle{
@@ -15,11 +19,12 @@
     font-size: 16px;
     margin-bottom: 20px;
     margin-top: 20px;
+    color: blue;
 }
 .price{
     margin: auto;
     text-align: center;
-    font-size: 48px;
+    font-size: 60px;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -31,4 +36,5 @@
 .image{
     margin: 0 30px;
     width: 150px;
+    height: 100px;
 }
