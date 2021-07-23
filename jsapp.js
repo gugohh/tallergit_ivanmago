@@ -1,9 +1,9 @@
-
-
 let lista = document.createElement('ul')
 document.body.appendChild(lista)
 
-fetch('https://fakestoreapi.com/products').then(data => data.json()).then(json => {
+const urlBase = 'https://fakestoreapi.com/products';
+
+fetch(urlBase).then(data => data.json()).then(json => {
 
     json.map(element => {
         let li = document.createElement('li');
@@ -14,31 +14,7 @@ fetch('https://fakestoreapi.com/products').then(data => data.json()).then(json =
     )
 })
 
-
-
-
-
-let cambio = (value) => {
-
-    fetch(`https://fakestoreapi.com/products/category/${value}`)
-        .then(res => res.json())
-        .then(json => {
-            lista.innerHTML = '';
-            json.map(element => {
-                element
-                lista.innerHTML += `
-                    <div class="container">
-                    <img class="image" src="${element.image}" />
-                    <h2 class="tittle">${element.tittle}</h2>
-                    <p class="price">${element.price} €</p>
-                    <p class="description">${element.description}</p>
-                    </div>
-                    `;
-            })
-        })
-}
-
-fetch('https://fakestoreapi.com/products/categories')
+fetch(`${urlBase}/categories`)
     .then(res => res.json())
     .then(json => {
         let select = document.createElement('select')
@@ -61,3 +37,25 @@ fetch('https://fakestoreapi.com/products/categories')
         console.log(select.value);
 
     })
+
+
+
+let cambio = (value) => {
+
+    fetch(`${urlBase}/category/${value}`)
+        .then(res => res.json())
+        .then(json => {
+            lista.innerHTML = '';
+            json.map(element => {
+                element
+                lista.innerHTML += `
+                    <div class="container">
+                    <img class="image" src="${element.image}" />
+                    <h2 class="tittle">${element.tittle}</h2>
+                    <p class="price">${element.price} €</p>
+                    <p class="description">${element.description}</p>
+                    </div>
+                    `;
+            })
+        })
+}
